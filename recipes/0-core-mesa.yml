@@ -35,15 +35,6 @@ modules:
   - from-file: setup/0-install-termshell.yml
   - from-file: setup/0-remove-bloat.yml
 
-## Fonts Module ##
-  -  type: fonts
-     fonts:
-       nerd-fonts:
-         - FiraCode
-         - Hack
-         - Mononoki
-         - CascadiaCode
-
 #############################
 ### End of System Modules ###
 #############################

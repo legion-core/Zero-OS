@@ -4,14 +4,37 @@ modules:
  - type: dnf
    install:
      packages:
+      - mesa
       - mesa-dri-drivers
       - mesa-libGLU
       - mesa-libEGL
       - mesa-libGL
       - mesa-libgbm
       - mesa-vulkan-drivers
-      - mesa-va-drivers
+      - mesa-va-drivers-freeworld
       - libdrm
       - libglvnd
       - vulkan-loader
       - vulkan-tools
+      - libva
+      - libva-utils
+      - alsa-lib
+      - alsa-ucm
+      - alsa-utils
+      - alsa-sof-firmware
+      - alsa-firmware
+      - alsa-tools-firmware
+      - microcode_ctl
+      - libinput
+      - libcamera
+      - xfsprogs
+      - exfatprogs
+      - ntfs-3g
+      - lm_sensors
+      - lm_sensors-libs
+      - usbutils
+      - pciutils
+      - e2fsprogs
+      - pipewire-plugin-libcamera
+      - v4l-utils
+      - intel-media-driver

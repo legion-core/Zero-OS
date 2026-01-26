@@ -3,6 +3,7 @@
 modules:
  - type: dnf
    install:
+     install-weak-deps: false
      packages:
       - kernel-tools-libs
       - kernel-modules-extra
@@ -24,3 +25,5 @@ modules:
       - v4l-utils
       - openvpn
       - NetworkManager-openvpn
+      - unbound-anchor
+      - usbmuxd

@@ -8,4 +8,5 @@ modules:
       - kernel-modules-extra
       - wget
       - power-profiles-daemon
-      - thermald      
+      - thermald
+      - upower      

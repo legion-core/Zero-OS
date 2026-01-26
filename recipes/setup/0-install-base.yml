@@ -22,3 +22,5 @@ modules:
       - usbutils
       - pciutils
       - v4l-utils
+      - openvpn
+      - NetworkManager-openvpn

@@ -11,8 +11,6 @@ modules:
         - iw
         - cifs-utils
         - fuse-sshfs
-        - openvpn
-        - NetworkManager-openvpn
         - avahi-tools
         - cups
         - cups-client

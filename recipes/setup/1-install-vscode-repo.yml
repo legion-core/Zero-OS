@@ -1,9 +1,0 @@
----
-# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
-modules:
-  - type: dnf
-    repos:
-     keys:
-       - https://packages.microsoft.com/keys/microsoft.asc
-     files:
-       - repo-vscode.repo

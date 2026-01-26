@@ -6,4 +6,4 @@ modules:
      keys:
        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
      files:
-       - repo-brave.repo
+       - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo

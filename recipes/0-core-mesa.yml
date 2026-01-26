@@ -24,24 +24,9 @@ modules:
       - source: system
         destination: /
 
-## Bling Module ##
-  - type: bling
-    install:
-     - rpmfusion
-
-## Brew Module ##
-  - type: brew
-    nofile-limits: true
-    brew-analytics: false
-    auto-update: true
-    auto-upgrade: true
-    update-interval: 6h
-    upgrade-interval: 8h
-    update-wait-after-boot: 2h
-    upgrade-wait-after-boot: 4h
-
 ## Import Modules/Scripts ##
   - from-file: setup/0-enable-coprs-repos.yml
+  - from-file: setup/0-install-brew.yml
   - from-file: setup/0-install-base.yml
   - from-file: setup/0-install-vkgpu.yml
   - from-file: setup/0-install-codecs.yml

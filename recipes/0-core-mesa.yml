@@ -50,15 +50,6 @@ modules:
   - from-file: setup/0-install-termshell.yml
   - from-file: setup/0-remove-bloat.yml
 
-## Default Flatpak Module ##
-  - type: default-flatpaks
-    configurations:
-      - notify: true
-        scope: system
-        install:
-          - org.mozilla.firefox
-      - scope: user 
-
 ## Fonts Module ##
   -  type: fonts
      fonts:

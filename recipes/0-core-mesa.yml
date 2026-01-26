@@ -17,7 +17,6 @@ platforms:
 #### MODULES ####
 #################
 modules:
-
 ## Files Module ##
   - type: files
     files:
@@ -25,6 +24,7 @@ modules:
         destination: /
 
 ## Import Modules/Scripts ##
+# => Modules (Imported)
   - from-file: setup/0-enable-coprs-repos.yml
   - from-file: setup/0-install-brew.yml
   - from-file: setup/0-install-base.yml
@@ -38,7 +38,6 @@ modules:
 #############################
 ### End of System Modules ###
 #############################
-
 ## OS-release Module ##
   - type: os-release
     properties:
@@ -48,10 +47,8 @@ modules:
 
 ## initramfs module ##
   - type: initramfs
-
 ## Signing Module ##
   - type: signing
-
 ###################
 ### END of File ###
 ###################

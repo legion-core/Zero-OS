@@ -1,0 +1,29 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    install:
+      packages:
+        - iproute
+        - iputils
+        - traceroute
+        - tcpdump
+        - nmap
+        - ethtool
+        - bind-utils
+        - iw
+        - cifs-utils
+        - nfs-utils
+        - fuse-sshfs
+        - openvpn
+        - NetworkManager-openvpn
+        - avahi
+        - avahi-tools
+        - cups
+        - cups-client
+        - cups-libs
+        - cups-filters
+        - cups-filters-driverless
+        - cups-browsed
+        - ipp-usb
+        - system-config-printer

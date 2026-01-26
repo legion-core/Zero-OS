@@ -38,4 +38,6 @@ modules:
       - curl
       - wget
       - chrony
-      - power-profiles-daemon
+      - tuned
+      - thermald
+      - tuned-ppd

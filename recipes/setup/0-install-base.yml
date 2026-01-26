@@ -9,4 +9,16 @@ modules:
       - wget
       - power-profiles-daemon
       - thermald
-      - upower      
+      - upower
+      - alsa-ucm
+      - alsa-utils
+      - alsa-sof-firmware
+      - alsa-firmware
+      - alsa-tools-firmware
+      - libcamera-ipa
+      - libinput
+      - libinput-utils
+      - lm_sensors
+      - usbutils
+      - pciutils
+      - v4l-utils

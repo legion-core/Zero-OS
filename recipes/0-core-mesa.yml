@@ -44,6 +44,7 @@ modules:
   - from-file: setup/0-enable-coprs-repos.yml
   - from-file: setup/0-install-base.yml
   - from-file: setup/0-install-codecs.yml
+  - from-file: setup/0-install-pipewire-xdg.yml
   - from-file: setup/0-install-vkgpu.yml
   - from-file: setup/0-install-termshell.yml
   - from-file: setup/0-install-avahi-cups.yml

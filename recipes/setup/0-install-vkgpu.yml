@@ -9,15 +9,5 @@ modules:
       - mesa-vulkan-drivers
       - vulkan-tools
       - libva-utils
-      - alsa-ucm
-      - alsa-utils
-      - alsa-sof-firmware
-      - alsa-firmware
-      - alsa-tools-firmware
-      - libinput
-      - libinput-utils
-      - lm_sensors
-      - usbutils
-      - pciutils
-      - v4l-utils
       - intel-media-driver
+      - intel-vpl-gpu-rt

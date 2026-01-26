@@ -13,6 +13,5 @@ modules:
       - mesa-va-drivers
       - libdrm
       - libglvnd
-      - vulkan
       - vulkan-loader
       - vulkan-tools

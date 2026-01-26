@@ -3,6 +3,7 @@
 modules:
   - type: dnf
     install:
+       install-weak-deps: false
        packages:
          - zsh
          - zsh-autosuggestions
@@ -20,3 +21,6 @@ modules:
          - nodejs
          - pipx
          - python3-pip
+         - python3-dotenv+cli
+         - nodejs-npm
+         - nodejs-full-i18n

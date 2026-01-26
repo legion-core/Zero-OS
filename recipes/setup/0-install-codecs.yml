@@ -3,6 +3,7 @@
 modules:
   - type: dnf
     install:
+       install-weak-deps: false
        packages:
          - ffmpeg
          - ffmpeg-libs
@@ -31,3 +32,6 @@ modules:
          - xdg-utils
          - xdg-user-dirs
          - xdg-dbus-proxy
+         - intel-vpl-gpu-rt
+         - libcamera-ipa
+         - exiv2

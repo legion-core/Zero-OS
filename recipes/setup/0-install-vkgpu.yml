@@ -3,8 +3,10 @@
 modules:
  - type: dnf
    install:
+     install-weak-deps: false
      packages:
       - mesa-libGLU
+      - mesa-vulkan-drivers
       - vulkan-tools
       - libva-utils
       - alsa-ucm

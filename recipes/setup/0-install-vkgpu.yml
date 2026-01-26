@@ -1,0 +1,17 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+ - type: dnf
+   install:
+     packages:
+      - mesa-dri-drivers
+      - mesa-libEGL
+      - mesa-libGL
+      - mesa-libgbm
+      - mesa-vulkan-drivers
+      - mesa-va-drivers
+      - libdrm
+      - libglvnd
+      - vulkan
+      - vulkan-loader
+      - vulkan-tools

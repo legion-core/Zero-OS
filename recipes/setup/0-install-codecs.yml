@@ -2,20 +2,6 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
 modules:
   - type: dnf
-    remove:
-       packages:
-         - fdk-aac-free
-         - libavcodec-free
-         - libavdevice-free
-         - libavfilter-free
-         - libavformat-free
-         - libavutil-free
-         - libpostproc-free
-         - libswresample-free
-         - libswscale-free
-         - ffmpeg-free
-
-  - type: dnf
     install:
        packages:
          - ffmpeg

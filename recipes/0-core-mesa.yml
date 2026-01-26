@@ -52,16 +52,6 @@ modules:
   - from-file: setup/1-install-brave-repo.yml
 
 ## Dnf Module ##
-# => Install & Repo Management
-  - type: dnf
-    repos:
-      copr:
-        - atim/starship
-    install:
-      packages:
-        - micro
-        - starship
-
 # => Remove & Cleanup Management
   - type: dnf
     remove:

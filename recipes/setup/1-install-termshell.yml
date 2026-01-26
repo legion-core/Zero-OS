@@ -1,0 +1,21 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+modules:
+  - type: dnf
+    install:
+       packages:
+         - bash
+         - bash-completion
+         - zsh
+         - zsh-autosuggestions
+         - zsh-syntax-highlighting
+         - starship
+         - fastfetch
+         - vim
+         - zoxide
+         - fd-find
+         - bat
+         - fzf
+         - distrobox
+         - podman
+         - podman-compose

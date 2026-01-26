@@ -36,8 +36,8 @@ modules:
   - type: brew
     nofile-limits: true
     brew-analytics: false
-    auto-update: false
-    auto-upgrade: false
+    auto-update: true
+    auto-upgrade: true
     update-interval: 6h
     upgrade-interval: 8h
     update-wait-after-boot: 2h
@@ -70,9 +70,29 @@ modules:
           - org.mozilla.firefox
       - scope: user 
 
+## Fonts Module ##
+  -  type: fonts
+     fonts:
+       nerd-fonts:
+         - FiraCode
+         - Hack
+         - Mononoki
+         - CascadiaCode
+
 #############################
 ### End of System Modules ###
 #############################
+
+## OS-release Module ##
+  - type: os-release
+    properties:
+      ID: fedora
+      ID_LIKE: fedora
+      NAME: zero-os-mesa
+      PRETTY_NAME: zero-os by legion-core (intel/amd)
+
+## initramfs module ##
+  - type: initramfs
 
 ## Signing Module ##
   - type: signing

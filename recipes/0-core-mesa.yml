@@ -50,14 +50,7 @@ modules:
   - from-file: setup/0-install-vkgpu.yml
   - from-file: setup/0-install-termshell.yml
   - from-file: setup/0-install-avahi-cups.yml
-
-## Dnf Module ##
-# => Remove & Cleanup Management
-  - type: dnf
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
+  - from-file: setup/0-remove-bloat.yml
 
 ## Default Flatpak Module ##
   - type: default-flatpaks

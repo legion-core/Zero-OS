@@ -28,3 +28,7 @@ modules:
          - pipewire-config-raop
          - vlc-plugin-pipewire
          - pipewire-libs-extra
+         - xdg-desktop-portal
+         - xdg-utils
+         - xdg-user-dirs
+         - xdg-dbus-proxy

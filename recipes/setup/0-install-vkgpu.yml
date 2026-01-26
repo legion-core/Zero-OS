@@ -26,6 +26,7 @@ modules:
       - alsa-tools-firmware
       - microcode_ctl
       - libinput
+      - libinput-utils
       - libcamera
       - xfsprogs
       - exfatprogs

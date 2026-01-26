@@ -40,3 +40,8 @@ modules:
       - chrony
       - power-profiles-daemon
       - thermald
+      - openssl-libs
+      - openssh
+      - openssh-clients
+      - openssh-server
+      

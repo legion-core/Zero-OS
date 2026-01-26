@@ -5,6 +5,7 @@ modules:
      packages:
       - kernel
       - kernel-core
+      - kernel-headers
       - kernel-modules
       - kernel-modules-extra
       - util-linux

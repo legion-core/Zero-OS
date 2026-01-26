@@ -5,6 +5,7 @@ modules:
    install:
      packages:
       - mesa-dri-drivers
+      - mesa-libGLU
       - mesa-libEGL
       - mesa-libGL
       - mesa-libgbm

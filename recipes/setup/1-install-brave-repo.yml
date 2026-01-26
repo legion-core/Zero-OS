@@ -4,6 +4,6 @@ modules:
   - type: dnf
     repos:
      keys:
-       - https://packages.microsoft.com/keys/microsoft.asc
+       - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
      files:
-       - repo-vscode.repo
+       - repo-brave.repo

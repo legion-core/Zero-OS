@@ -43,6 +43,12 @@ modules:
     update-wait-after-boot: 2h
     upgrade-wait-after-boot: 4h
 
+## Import Modules/Scripts ##
+  - from-file: setup/0-install-codecs.yml
+  - from-file: setup/1-install-vscode-repo.yml
+  - from-file: setup/1-install-vivaldi-repo.yml
+  - from-file: setup/1-install-brave-repo.yml
+
 ## Dnf Module ##
 # => Install & Repo Management
   - type: dnf

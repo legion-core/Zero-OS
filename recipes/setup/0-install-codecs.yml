@@ -12,3 +12,19 @@ modules:
          - gstreamer1-plugins-bad-freeworld
          - gstreamer1-plugins-ugly
          - gstreamer1-vaapi
+         - libheif-freeworld
+         - libjxl
+         - libwebp
+         - wireplumber
+         - pipewire
+         - pipewire-libs
+         - pipewire-jack-audio-connection-kit-libs
+         - pipewire-jack-audio-connection-kit
+         - pipewire-pulseaudio
+         - pipewire-alsa
+         - pipewire-plugin-libcamera
+         - pipewire-gstreamer
+         - pipewire-utils
+         - pipewire-config-raop
+         - vlc-plugin-pipewire
+         - pipewire-libs-extra

@@ -18,3 +18,25 @@ modules:
       - bluez
       - polkit
       - shadow-utils
+      - coreutils
+      - util-linux
+      - findutils
+      - grep
+      - sed
+      - gawk
+      - bash
+      - which
+      - procps-ng
+      - iproute
+      - tar
+      - xz
+      - gzip
+      - bzip2
+      - zstd
+      - ca-certificates
+      - openssl
+      - curl
+      - wget
+      - chrony
+      - tuned
+      - thermald

@@ -19,3 +19,8 @@ modules:
          - distrobox
          - podman
          - podman-compose
+         - git
+         - nodejs
+         - python3
+         - pipx
+         - python3-pip

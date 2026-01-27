@@ -1,18 +1,16 @@
-# Zero OS
-
-[![Zero-OS Automatic Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml)
-
-[![Zero-OS Scheduled Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml)
+# Zero-OS
 
 [![Zero-OS Watchdog](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-build-watchdog.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-build-watchdog.yml)
+[![Zero-OS Automatic Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml)
+[![Zero-OS Scheduled Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml)
 
-Zero OS is a custom Fedora Atomic image you can use as a starting point for your own OS or custom image (you are expected to extend/layer stuff on Zero OS, as it is headless by default).
+Zero-OS is a custom Fedora Atomic image you can use as a starting point for your own OS or custom image (you are expected to extend/layer stuff on Zero-OS, as it is headless by default).
 
 I made this because setting up Fedora after every install gets old fast. (It is also used as upstream for legion-os & solaris-os.)
 
 It’s basically Fedora with some of the boring stuff already done. PipeWire, media codecs, and common drivers are already there, so you don’t have to install that junk yourself every time. (Uses rpm-fusion + rpm-fusion-tainted to do so.)
 
-Zero OS is built using [BlueBuild](https://blue-build.org), and it is based on Fedora’s [fedora-bootc](https://docs.fedoraproject.org/en-US/bootc/) image. If you want to build your own image like this, check out the [BlueBuild docs](https://blue-build.org/how-to/setup/).
+Zero-OS is built using [BlueBuild](https://blue-build.org), and it is based on Fedora’s [fedora-bootc](https://docs.fedoraproject.org/en-US/bootc/) image. If you want to build your own image like this, check out the [BlueBuild docs](https://blue-build.org/how-to/setup/).
 
 ---
 
@@ -22,7 +20,7 @@ Zero OS is built using [BlueBuild](https://blue-build.org), and it is based on F
 > [This is an experimental Fedora feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable)
 > Use at your own discretion.
 
-To switch an existing Fedora Atomic system to Zero OS:
+To switch an existing Fedora Atomic system to Zero-OS:
 
 * Rebase to the unsigned image:
 
@@ -48,9 +46,9 @@ rpm-ostree rebase ostree-image-signed:docker://ghcr.io/legion-core/zero-os:lates
 systemctl reboot
 ```
 
-After that, you should be running Zero OS.
+After that, you should be running Zero-OS.
 
-Zero OS uses the latest Fedora version by default. A GTS version (one Fedora version behind branch) is not planned at the moment, but can be made in the future if needed.
+Zero-OS uses the latest Fedora version by default. A GTS version (one Fedora version behind branch) is not planned at the moment, but can be made in the future if needed.
 
 ---
 
@@ -89,7 +87,7 @@ If this passes, the image came from this repo. (If it fails, don’t use the ima
 ## ▸ Credits
 
 * [cron-job.org](https://cron-job.org) – used to automate build workflow (more reliable cron implementation)
-* [BlueBuild](https://blue-build.org) – project’s base; without it, Zero OS likely wouldn’t exist
+* [BlueBuild](https://blue-build.org) – project’s base; without it, Zero-OS likely wouldn’t exist
 * [Fedora](https://getfedora.org) – uses Fedora’s fedora-bootc image as a base
 
 ---
@@ -102,36 +100,36 @@ A. 'fedora-bootc' provides you with less bloat ootb; even free codecs are not a 
 
 ---
 
-### 2. Why is X package not a part of Zero OS ?
+### 2. Why is X package not a part of Zero-OS ?
 
-A. Zero OS by default aims to be lightweight & headless. If you feel X package provides functionality or a use case that will benefit everyone, you are free to make an issue or PR, but there is no guarantee that it will be accepted.
-
----
-
-### 3. Why does Zero OS ship X package instead of Y ?
-
-A. Zero OS usually follows freedesktop standards or the most popular package for that use case.
+A. Zero-OS by default aims to be lightweight & headless. If you feel X package provides functionality or a use case that will benefit everyone, you are free to make an issue or PR, but there is no guarantee that it will be accepted.
 
 ---
 
-### 4. Does Zero OS follow Upstream Fedora Desktop Defaults ?
+### 3. Why does Zero-OS ship X package instead of Y ?
 
-A. Not always. For example, Zero OS uses PPD (not finalized yet) instead of upstream tuned, as PPD is a freedesktop standard. Similarly, Zero OS doesn’t ship nano as default; default is vim, etc.
+A. Zero-OS usually follows freedesktop standards or the most popular package for that use case.
 
 ---
 
-### 5. How can I contribute to Zero OS ? and why do my builds fail in fork ?
+### 4. Does Zero-OS follow Upstream Fedora Desktop Defaults ?
+
+A. Not always. For example, Zero-OS uses PPD (not finalized yet) instead of upstream tuned, as PPD is a freedesktop standard. Similarly, Zero-OS doesn’t ship nano as default; default is vim, etc.
+
+---
+
+### 5. How can I contribute to Zero-OS ? and why do my builds fail in fork ?
 
 A.
 
-* There are multiple ways to contribute to Zero OS:
+* There are multiple ways to contribute to Zero-OS:
 
   1. Open an issue and attach fix as an attachment (only for minor/QoL fixes)
   2. Fork, commit, pull request
 
 * But note:
 
-  * All build/workflow builds will fail because your fork lacks the cosign key (this is to protect integrity/security of Zero OS project)
+  * All build/workflow builds will fail because your fork lacks the cosign key (this is to protect integrity/security of Zero-OS project)
 
 * Fix for this:
 
@@ -148,10 +146,10 @@ A.
 
 A.
 
-* Zero OS only ships latest AMD/Intel drivers; i.e. legacy GPUs are not supported.
+* Zero-OS only ships latest AMD/Intel drivers; i.e. legacy GPUs are not supported.
 * Nvidia GPUs that don’t support nvidia-open drivers are not supported ootb.
 
-But Zero OS has a planned Zero OS ISO:
+But Zero-OS has a planned Zero-OS ISO:
 
 * This ISO will not contain any GPU drivers.
 * User will be able to layer/install any version of drivers they want (including legacy drivers).
@@ -160,25 +158,25 @@ NOTE:
 
 * There won’t be any official support for legacy GPUs.
 * It’s up to the user to manage those drivers.
-* Zero OS doesn’t guarantee stability with legacy drivers.
+* Zero-OS doesn’t guarantee stability with legacy drivers.
 
 ---
 
-### 7. Does Zero OS ship 32bit packages/libs to support 32bit applications (e.g. Steam Client) ?
+### 7. Does Zero-OS ship 32bit packages/libs to support 32bit applications (e.g. Steam Client) ?
 
-A. No. Zero OS only ships 64bit packages by default, but users can layer/install those packages/libs manually, as they are available in repos.
-
----
-
-### 8. Does Zero OS include printing support ? are HP/older printers supported by default ?
-
-A. Zero OS ships cups + system-config-printer by default (with avahi for WiFi printer detection), but hplip or older printer drivers are not included, as they are user-specific and would bloat Zero OS if all were added.
+A. No. Zero-OS only ships 64bit packages by default, but users can layer/install those packages/libs manually, as they are available in repos.
 
 ---
 
-### 9. what are extra repos included by Zero OS by default ?
+### 8. Does Zero-OS include printing support ? are HP/older printers supported by default ?
 
-A. Zero OS by default includes extra 3rd-party repos which are not part of Fedora by default:
+A. Zero-OS ships cups + system-config-printer by default (with avahi for WiFi printer detection), but hplip or older printer drivers are not included, as they are user-specific and would bloat Zero-OS if all were added.
+
+---
+
+### 9. what are extra repos included by Zero-OS by default ?
+
+A. Zero-OS by default includes extra 3rd-party repos which are not part of Fedora by default:
 
 1. rpm-fusion (complete stack)
 2. rpm-fusion-tainted (for nvidia-open drivers)
@@ -191,6 +189,6 @@ A. Zero OS by default includes extra 3rd-party repos which are not part of Fedor
 
 ### 10. Is local package layering supported ?
 
-A. Zero OS doesn’t recommend package layering, and `rpm-ostree install` is considered deprecated (only use as a last resort). Users are recommended to make a custom Zero OS image using BlueBuild if they want to add packages to Zero OS.
+A. Zero-OS doesn’t recommend package layering, and `rpm-ostree install` is considered deprecated (only use as a last resort). Users are recommended to make a custom Zero-OS image using BlueBuild if they want to add packages to Zero-OS.
 
-For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolbox, distrobox, podman containers — all of these are already shipped in Zero OS by default.
+For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolbox, distrobox, podman containers — all of these are already shipped in Zero-OS by default.

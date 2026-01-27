@@ -204,7 +204,7 @@ For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolb
    
    1. Zero-OS watchdog : checks when last image was build , was it sucessful , runs build if last image is older than 12hrs
    2. Zero-OS automatic build : automatically rebuild image on any pr merge, push, or file change (except .md files )
-   3. Zero-OS scheduled build : automatically rebuild image every 8hrs ( keeps image fresh and up-to-date , prevents watchdog faliures )
+   3. Zero-OS scheduled build : automatically rebuild image every 8hrs ( keeps image fresh and up-to-date )
 
    if you looked into the workflow files you might have noticed Zero-OS (or any other legion-core image ) dosent use github's scheduler+cron , this is due to it being unreliable , problematic , barely functioning , not consistent.
    github treats scheduler+cron (native ones) as more of a suggestion and they barely work most of the time on the intended interval.

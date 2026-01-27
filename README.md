@@ -192,3 +192,21 @@ A. Zero-OS by default includes extra 3rd-party repos which are not part of Fedor
 A. Zero-OS doesn’t recommend package layering, and `rpm-ostree install` is considered deprecated (only use as a last resort). Users are recommended to make a custom Zero-OS image using BlueBuild if they want to add packages to Zero-OS.
 
 For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolbox, distrobox, podman containers — all of these are already shipped in Zero-OS by default.
+
+## ▸ Extra
+
+## 1. How are Zero-OS images build ? what is the workflow logic ?
+
+   A.  Zero-OS images are build by stacking rpm-fusion packages over base 'fedora-bootc' , by default 'fedora-bootc' image dosent contain any codecs , audio firmware , extra repos etc . it is a very minimal base with only necessasy packages included.
+       this provides a excellent and gives us total freedom on what to include or what-not , it also prevents any dnf swaps , overrides ; this keeps build flow cleaner and faster.
+       
+   Zero-OS repo uses three workflows for different functions :
+   
+   1. Zero-OS watchdog : checks when last image was build , was it sucessful , runs build if last image is older than 12hrs
+   2. Zero-OS automatic build : automatically rebuild image on any pr merge, push, or file change (except .md files )
+   3. Zero-OS scheduled build : automatically rebuild image every 8hrs ( keeps image fresh and up-to-date , prevents watchdog faliures )
+
+   if you looked into the workflow files you might have noticed Zero-OS (or any other legion-core image ) dosent use github's scheduler+cron , this is due to it being unreliable , problematic , barely functioning , not consistent.
+   github treats scheduler+cron (native ones) as more of a suggestion and they barely work most of the time on the intended interval.
+
+   to counter this Zero-OS uses 'cron-job.org' as it is a 100% free , reliable , on-time/on-point exectuion , open source and is much easier to use.

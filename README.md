@@ -2,7 +2,7 @@
 
 [![bluebuild build badge](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml)
 
-Zero OS is a base Fedora Atomic image you can use as a starting point for your own OS or custom image (you are expected to extend/layer stuff on Zero OS, as it is headless by default).
+Zero OS is a custom Fedora Atomic image you can use as a starting point for your own OS or custom image (you are expected to extend/layer stuff on Zero OS, as it is headless by default).
 
 I made this because setting up Fedora after every install gets old fast. (It is also used as upstream for legion-os & solaris-os.)
 
@@ -84,7 +84,7 @@ If this passes, the image came from this repo. (If it fails, don’t use the ima
 
 ## ▸ Credits
 
-* [cron-job.org](https://cron-job.org) – used to automate build workflow (more reliable than GitHub’s built-in cron implementation + free)
+* [cron-job.org](https://cron-job.org) – used to automate build workflow (more reliable cron implementation)
 * [BlueBuild](https://blue-build.org) – project’s base; without it, Zero OS likely wouldn’t exist
 * [Fedora](https://getfedora.org) – uses Fedora’s fedora-bootc image as a base
 
@@ -178,7 +178,7 @@ A. Zero OS by default includes extra 3rd-party repos which are not part of Fedor
 
 1. rpm-fusion (complete stack)
 2. rpm-fusion-tainted (for nvidia-open drivers)
-3. VS Code repo (official Microsoft repo; added as VS Code Flatpak is a bit hacky, so this gives users the ability to install VS Code at the system level)
+3. VS Code repo (official Microsoft repo; added as VS Code Flatpak is a bit hacky)
 4. Brave Browser repo (official)
 5. Vivaldi Browser repo (official)
 6. starship COPR (official COPR to install starship on Fedora)

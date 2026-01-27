@@ -206,7 +206,7 @@ For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolb
    2. Zero-OS automatic build : automatically rebuild image on any pr merge, push, or file change (except .md files )
    3. Zero-OS scheduled build : automatically rebuild image every 8hrs ( keeps image fresh and up-to-date )
 
-   if you looked into the workflow files you might have noticed Zero-OS (or any other legion-core image ) dosent use github's scheduler+cron , this is due to it being unreliable , problematic , barely functioning , not consistent.
+   if you have looked into zero-os repo workflow files you might have noticed Zero-OS (or any other legion-core image ) dosen't use github's scheduler+cron , this is due to it being unreliable , problematic , barely functioning , not consistent.
    github treats scheduler+cron (native ones) as more of a suggestion and they barely work most of the time on the intended interval.
 
    to counter this Zero-OS uses 'cron-job.org' as it is a 100% free , reliable , on-time/on-point exectuion , open source and is much easier to use.

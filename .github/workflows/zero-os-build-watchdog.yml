@@ -19,46 +19,67 @@ jobs:
         run: |
           echo "=========================================="
           echo " Zero-OS Watchdog Starting"
-          echo " Monitoring: zero-os-scheduled-build.yml"
+          echo " Monitoring workflow: zero-os-scheduled-build.yml"
           echo "=========================================="
           echo ""
 
-          echo "Fetching most recent workflow run..."
+          echo "Fetching recent builder workflow runs..."
 
           RESPONSE=$(curl -s \
             -H "Authorization: Bearer ${{ github.token }}" \
             -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/zero-os-scheduled-build.yml/runs?per_page=1")
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/zero-os-scheduled-build.yml/runs?per_page=5")
 
-          echo "Raw API response:"
-          echo "$RESPONSE" | jq '.'
+          echo ""
+          echo "Last 3 builder workflow runs:"
+          echo "------------------------------------------"
 
-          TOTAL=$(echo "$RESPONSE" | jq '.total_count')
+          echo "$RESPONSE" | jq -r '
+            .workflow_runs
+            | map(select(.event=="schedule" or .event=="workflow_dispatch"))
+            | .[0:3]
+            | .[]
+            | "Run ID: \(.id) | Commit: \(.head_sha) | Event: \(.event) | Updated: \(.updated_at)"
+          '
 
-          if [ "$TOTAL" = "0" ]; then
-            echo "⚠ No workflow runs found at all."
+          LAST_RUN=$(echo "$RESPONSE" | jq -r '
+            .workflow_runs
+            | map(select(.event=="schedule" or .event=="workflow_dispatch"))
+            | .[0].updated_at
+          ')
+
+          if [ "$LAST_RUN" = "null" ] || [ -z "$LAST_RUN" ]; then
+            echo ""
+            echo "⚠ No qualifying builder workflow runs found."
             echo "no_run=true" >> $GITHUB_OUTPUT
             exit 0
           fi
-
-          LAST_RUN=$(echo "$RESPONSE" | jq -r '.workflow_runs[0].updated_at')
-
-          echo "Last workflow activity:"
-          echo "  $LAST_RUN"
 
           LAST_EPOCH=$(date -d "$LAST_RUN" +%s)
           NOW_EPOCH=$(date +%s)
 
           AGE_MIN=$(( (NOW_EPOCH - LAST_EPOCH) / 60 ))
+          THRESHOLD=45
+          REMAINING=$(( THRESHOLD - AGE_MIN ))
 
-          echo "Current time (UTC): $(date -u)"
-          echo "Last activity age: $AGE_MIN minutes"
+          echo ""
+          echo "------------------------------------------"
+          echo "Current time UTC:      $(date -u)"
+          echo "Current time Kolkata:  $(TZ=Asia/Kolkata date)"
+          echo ""
+          echo "Last activity UTC:     $(date -u -d "$LAST_RUN")"
+          echo "Last activity Kolkata: $(TZ=Asia/Kolkata date -d "$LAST_RUN")"
+          echo ""
+          echo "Minutes since last activity: $AGE_MIN"
+          echo "Watchdog threshold:          $THRESHOLD minutes"
 
-          if [ "$AGE_MIN" -gt 45 ]; then
-            echo "❌ Workflow appears stale"
+          if [ "$AGE_MIN" -gt "$THRESHOLD" ]; then
+            echo "Decision: ❌ STALE"
+            echo "Watchdog will trigger rebuild now."
             echo "stale=true" >> $GITHUB_OUTPUT
           else
-            echo "✅ Workflow is active/recent"
+            echo "Decision: ✅ HEALTHY"
+            echo "Minutes remaining before trigger: $REMAINING"
             echo "stale=false" >> $GITHUB_OUTPUT
           fi
 

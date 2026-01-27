@@ -45,11 +45,21 @@ The `latest` tag will automatically point to the latest build. That build will s
 
 ---
 
+## Features
+
+* Base Fedora Atomic image
+* PipeWire pre-installed
+* Media codecs included
+* Common hardware drivers included
+* Built and published automatically using GitHub Actions
+* Signed container images
+* Designed to be extended and customized
+
+---
+
 ## ISO
 
-If built on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso).
-
-These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+You can generate an offline ISO using the instructions available [here](https://blue-build.org/how-to/generate-iso/).
 
 ---
 
@@ -60,3 +70,11 @@ These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](ht
 ```bash
 cosign verify --key cosign.pub ghcr.io/legion-core/zero-os
 ```
+
+---
+
+## Credits
+
+* [cron-job.org](https://cron-job.org)
+* [BlueBuild](https://blue-build.org)
+* [Fedora](https://getfedora.org)

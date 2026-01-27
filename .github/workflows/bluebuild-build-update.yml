@@ -1,8 +1,5 @@
 name: bluebuild (build/update images)
 on:
-  schedule:
-    - cron: '*/10 * * * *'
-    
   push:
     paths-ignore:
       - "**.md"

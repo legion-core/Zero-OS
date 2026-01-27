@@ -1,4 +1,4 @@
-# zero-os &nbsp; [![bluebuild build badge](https://github.com/legion-core/zero-os/actions/workflows/build.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/build.yml)
+# zero-os &nbsp; [![bluebuild build badge]([https://github.com/legion-core/zero-os/actions/workflows/build.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/build.yml](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml))
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 

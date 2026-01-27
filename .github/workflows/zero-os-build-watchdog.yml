@@ -1,8 +1,6 @@
 name: Zero-OS Watchdog
 
 on:
-  schedule:
-    - cron: "*/45 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -36,7 +34,7 @@ jobs:
 
           echo "$RESPONSE" | jq -r '
             .workflow_runs
-            | map(select(.event=="schedule" or .event=="workflow_dispatch"))
+            | map(select(.event=="workflow_dispatch"))
             | .[0:3]
             | .[]
             | "Run ID: \(.id) | Commit: \(.head_sha) | Event: \(.event) | Updated: \(.updated_at)"
@@ -44,7 +42,7 @@ jobs:
 
           LAST_RUN=$(echo "$RESPONSE" | jq -r '
             .workflow_runs
-            | map(select(.event=="schedule" or .event=="workflow_dispatch"))
+            | map(select(.event=="workflow_dispatch"))
             | .[0].updated_at
           ')
 
@@ -59,7 +57,7 @@ jobs:
           NOW_EPOCH=$(date +%s)
 
           AGE_MIN=$(( (NOW_EPOCH - LAST_EPOCH) / 60 ))
-          THRESHOLD=45
+          THRESHOLD=720
           REMAINING=$(( THRESHOLD - AGE_MIN ))
 
           echo ""

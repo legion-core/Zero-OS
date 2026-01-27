@@ -1,8 +1,7 @@
 name: Zero-OS (scheduled build images)
 
 on:
-  schedule:
-    - cron: "*/10 * * * *"
+  ### Builds are managed by cron-job.org ( much more reliable ) ###
   workflow_dispatch:
 
 concurrency:

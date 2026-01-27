@@ -3,6 +3,7 @@
 modules:
  - type: dnf
    install:
+     install-weak-deps: false
      packages:
        - libva-nvidia-driver
        - xorg-x11-drv-nvidia-cuda

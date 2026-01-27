@@ -23,6 +23,7 @@ jobs:
         recipe:
           - 0-core-mesa.yml
           - 0-core-nvidia.yml
+          - 0-core-mini.yml
 
     steps:
       - name: Zero-OS build/update (automatic)

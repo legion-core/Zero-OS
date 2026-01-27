@@ -1,0 +1,50 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+
+####################
+#### Image Info ####
+####################
+
+name: zero-os
+description: Zero-OS (No GPU drivers Preinstalled)
+base-image: quay.io/fedora/fedora-bootc
+image-version: latest
+platforms:
+  - linux/amd64
+
+#################
+#### MODULES ####
+#################
+modules:
+
+## Import Modules/Scripts ##
+# => Modules (Imported)
+  - from-file: setup/0-enable-coprs-repos.yml
+  - from-file: setup/0-install-brew.yml
+  - from-file: setup/0-install-base.yml
+  - from-file: setup/0-install-vkgpu.yml
+  - from-file: setup/0-install-codecs.yml
+  - from-file: setup/0-install-nvidia.yml
+  - from-file: setup/0-install-pipewire-xdg.yml
+  - from-file: setup/0-install-avahi-cups.yml
+  - from-file: setup/0-install-termshell.yml
+  - from-file: setup/0-remove-bloat.yml
+
+#############################
+### End of System Modules ###
+#############################
+## OS-release Module ##
+  - type: os-release
+    properties:
+      ID: fedora
+      NAME: Zero-OS
+      PRETTY_NAME: Zero-OS by legion-core (mini)
+
+## initramfs module ##
+  - type: initramfs
+## Signing Module ##
+  - type: signing
+###################
+### END of File ###
+###################

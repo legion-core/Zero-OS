@@ -1,4 +1,4 @@
-name: Zero-OS (automatic build images)
+name: Zero-OS (scheduled build images)
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
           - 0-core-nvidia.yml
 
     steps:
-      - name: Zero-OS build/update (automatic)
+      - name: Zero-OS build/update (scheduled)
         uses: blue-build/github-action@v1.11
         with:
           recipe: ${{ matrix.recipe }}

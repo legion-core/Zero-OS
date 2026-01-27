@@ -42,8 +42,8 @@ modules:
   - type: os-release
     properties:
       ID: fedora
-      NAME: Zero OS
-      PRETTY_NAME: Zero OS by legion-core (intel/amd)
+      NAME: Zero-OS
+      PRETTY_NAME: Zero-OS by legion-core (intel/amd)
 
 ## initramfs module ##
   - type: initramfs

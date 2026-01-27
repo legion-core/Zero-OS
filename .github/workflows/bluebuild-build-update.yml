@@ -1,4 +1,4 @@
-name: bluebuild (build/update images)
+name: Zero OS (build/update images)
 on:
   push:
     paths-ignore:

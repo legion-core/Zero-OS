@@ -12,7 +12,7 @@ Zero OS is built using [BlueBuild](https://blue-build.org), and it is based on F
 
 ---
 
-## Installation
+## ▸ Installation
 
 > [!WARNING]
 > [This is an experimental Fedora feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable)
@@ -50,17 +50,17 @@ Zero OS uses the latest Fedora version by default. A GTS version (one Fedora ver
 
 ---
 
-## Features
+## ▸ Features
 
 * Fedora Atomic base: provides stability & OS rollbacks
 * PipeWire stack preinstalled (with ALSA & JACK support)
 * Media codecs (from rpm-fusion)
 * Common hardware drivers (Mesa + Vulkan stack)
-* Easy to extend (only contains needed/most used packages, no bloat by design)
+* Easy to extend (only contains needed/most-used packages, no bloat by design)
 
 ---
 
-## ISO
+## ▸ ISO
 
 Offline ISOs are currently WIP.
 
@@ -69,7 +69,7 @@ To make an ISO yourself, you can use BlueBuild’s guide (it’s easy to follow)
 
 ---
 
-## Verification
+## ▸ Verification
 
 If you want to verify the cosign signature of the image, use this command:
 (Images are signed with [Sigstore](https://www.sigstore.dev/) and [cosign](https://github.com/sigstore/cosign).)
@@ -82,25 +82,25 @@ If this passes, the image came from this repo. (If it fails, don’t use the ima
 
 ---
 
-## Credits
+## ▸ Credits
 
 * [cron-job.org](https://cron-job.org) – used to automate build workflow (more reliable than GitHub’s built-in cron implementation + free)
-* [BlueBuild](https://blue-build.org) – project’s base, without it Zero OS likely wouldn’t exist
+* [BlueBuild](https://blue-build.org) – project’s base; without it, Zero OS likely wouldn’t exist
 * [Fedora](https://getfedora.org) – uses Fedora’s fedora-bootc image as a base
 
 ---
 
-## FAQ
+## ▸ FAQ
 
 ### 1. why did you choose 'fedora-bootc' as base instead of recommended ublue images or bluebuild base images ?
 
-A. 'fedora-bootc' provides you with less bloat ootb, even free codecs are not a part of the image by default. This streamlines the build process + keeps the image cleaner.
+A. 'fedora-bootc' provides you with less bloat ootb; even free codecs are not a part of the image by default. This streamlines the build process + keeps the image cleaner.
 
 ---
 
 ### 2. Why is X package not a part of Zero OS ?
 
-A. Zero OS by default aims to be lightweight & headless. If you feel X package provides functionality or use case that will benefit everyone, you are free to make an issue or PR, but there is no guarantee that it will be accepted.
+A. Zero OS by default aims to be lightweight & headless. If you feel X package provides functionality or a use case that will benefit everyone, you are free to make an issue or PR, but there is no guarantee that it will be accepted.
 
 ---
 
@@ -144,7 +144,7 @@ A.
 
 A.
 
-* Zero OS only ships latest AMD/Intel drivers, i.e. legacy GPUs are not supported.
+* Zero OS only ships latest AMD/Intel drivers; i.e. legacy GPUs are not supported.
 * Nvidia GPUs that don’t support nvidia-open drivers are not supported ootb.
 
 But Zero OS has a planned Zero OS ISO:
@@ -162,7 +162,7 @@ NOTE:
 
 ### 7. Does Zero OS ship 32bit packages/libs to support 32bit applications (e.g. Steam Client) ?
 
-A. No. Zero OS only ships 64bit packages by default, but users can layer/install those packages/libs manually as they are available in repos.
+A. No. Zero OS only ships 64bit packages by default, but users can layer/install those packages/libs manually, as they are available in repos.
 
 ---
 
@@ -178,7 +178,7 @@ A. Zero OS by default includes extra 3rd-party repos which are not part of Fedor
 
 1. rpm-fusion (complete stack)
 2. rpm-fusion-tainted (for nvidia-open drivers)
-3. VS Code repo (official Microsoft repo)
+3. VS Code repo (official Microsoft repo; added as VS Code Flatpak is a bit hacky, so this gives users the ability to install VS Code at the system level)
 4. Brave Browser repo (official)
 5. Vivaldi Browser repo (official)
 6. starship COPR (official COPR to install starship on Fedora)

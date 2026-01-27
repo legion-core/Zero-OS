@@ -1,75 +1,82 @@
 # Zero OS   [![bluebuild build badge](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml)
 
-Zero OS is a base Fedora Atomic image that can be used as a starting point for building your own operating system or custom image.
+Zero OS is a base Fedora Atomic image you can use as a starting point for your own OS or custom image.
 
-It aims to stay close to a stock Fedora experience, but with some of the common setup already done — things like PipeWire, media codecs, and basic drivers are included so you don’t have to install them manually after every install.
+I made this because setting up Fedora after every install gets old fast.
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for creating your own repository based on this template.
+It’s basically Fedora with some of the boring stuff already done. PipeWire, media codecs, and common drivers are already there, so you don’t have to install that junk yourself every time.
 
-After setup, it is recommended you update this README to describe your custom image.
+If you want to build your own image from this, check out the [BlueBuild docs](https://blue-build.org/how-to/setup/).
+
+Once you’re set up, you’ll probably want to tweak this README to describe what *your* image is about.
 
 ---
 
 ## Installation
 
 > [!WARNING]
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+> [This is an experimental Fedora feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable)
+> Use at your own discretion.
 
-To rebase an existing atomic Fedora installation to the latest build:
+To switch an existing Fedora Atomic system to Zero OS:
 
-* First rebase to the unsigned image, to get the proper signing keys and policies installed:
+* Rebase to the unsigned image:
 
   ```bash
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/legion-core/zero-os:latest
   ```
 
-* Reboot to complete the rebase:
+* Reboot:
 
   ```bash
   systemctl reboot
   ```
 
-* Then rebase to the signed image, like so:
+* Rebase to the signed image:
 
   ```bash
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/legion-core/zero-os:latest
   ```
 
-* Reboot again to complete the installation:
+* Reboot again:
 
   ```bash
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+After that, you should be running Zero OS.
+
+The `latest` tag always points to the newest build. The Fedora version comes from `recipe.yml`, so you won’t move to a new major release unless you change it there.
 
 ---
 
 ## Features
 
-* Base Fedora Atomic image
-* PipeWire pre-installed
-* Media codecs included
-* Common hardware drivers included
-* Built and published automatically using GitHub Actions
-* Signed container images
-* Designed to be extended and customized
+* Fedora Atomic base
+* PipeWire
+* Media codecs
+* Common hardware drivers
+* Automatic builds (GitHub Actions)
+* Signed images
+* Easy to extend
 
 ---
 
 ## ISO
 
-You can generate an offline ISO using the instructions available [here](https://blue-build.org/how-to/generate-iso/).
+You can generate an offline ISO using [BlueBuild’s ISO guide](https://blue-build.org/how-to/generate-iso/).
 
 ---
 
 ## Verification
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+Images are signed with [Sigstore](https://www.sigstore.dev/) and [cosign](https://github.com/sigstore/cosign).
 
 ```bash
 cosign verify --key cosign.pub ghcr.io/legion-core/zero-os
 ```
+
+If this passes, the image came from this repo.
 
 ---
 

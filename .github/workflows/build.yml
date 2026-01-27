@@ -2,7 +2,7 @@ name: bluebuild
 on:
   schedule:
     - cron:
-        "30 00 * * *" # build at 00:30 UTC every day
+        "00 03 * * *" # build at 03:00 UTC every day
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"

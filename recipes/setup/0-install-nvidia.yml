@@ -5,6 +5,7 @@ modules:
    install:
      install-weak-deps: false
      packages:
+       - vulkan
        - libva-nvidia-driver
        - xorg-x11-drv-nvidia-cuda
        - xorg-x11-drv-nvidia-cuda-libs

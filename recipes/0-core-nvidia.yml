@@ -1,38 +1,49 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: zero-os-nvidia
-description: This is my personal OS image.
 
+####################
+#### Image Info ####
+####################
+
+name: zero-os-mesa
+description: Zero-OS image for intel/amd (mesa) gpu's
 base-image: quay.io/fedora/fedora-bootc
 image-version: latest
+platforms:
+  - linux/amd64
 
+#################
+#### MODULES ####
+#################
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / 
 
-  - type: dnf
-    repos:
-      copr:
-        - atim/starship
-    install:
-      packages:
-        - micro
-        - starship
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
+## Import Modules/Scripts ##
+# => Modules (Imported)
+  - from-file: setup/0-enable-coprs-repos.yml
+  - from-file: setup/0-install-brew.yml
+  - from-file: setup/0-install-base.yml
+  - from-file: setup/0-install-vkgpu.yml
+  - from-file: setup/0-install-codecs.yml
+  - from-file: setup/0-install-pipewire-xdg.yml
+  - from-file: setup/0-install-avahi-cups.yml
+  - from-file: setup/0-install-termshell.yml
+  - from-file: setup/0-remove-bloat.yml
 
-  - type: default-flatpaks
-    configurations:
-      - notify: true 
-        scope: system
-        install: 
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user 
+#############################
+### End of System Modules ###
+#############################
+## OS-release Module ##
+  - type: os-release
+    properties:
+      ID: fedora
+      NAME: Zero-OS
+      PRETTY_NAME: Zero-OS by legion-core (intel/amd)
 
-  - type: signing 
+## initramfs module ##
+  - type: initramfs
+## Signing Module ##
+  - type: signing
+###################
+### END of File ###
+###################

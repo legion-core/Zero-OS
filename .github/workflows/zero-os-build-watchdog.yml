@@ -1,0 +1,84 @@
+name: Zero-OS Watchdog
+
+on:
+  schedule:
+    - cron: "*/45 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Watchdog heartbeat check
+        id: check
+        run: |
+          echo "=========================================="
+          echo " Zero-OS Watchdog Starting"
+          echo " Repository: ${{ github.repository }}"
+          echo " Monitoring workflow: zero-os-scheduled-build.yml"
+          echo "=========================================="
+          echo ""
+
+          echo "Fetching last successful build..."
+
+          RESPONSE=$(curl -s \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/zero-os-scheduled-build.yml/runs?status=success&per_page=1")
+
+          LAST_RUN=$(echo "$RESPONSE" | jq -r '.workflow_runs[0].updated_at')
+
+          if [ "$LAST_RUN" = "null" ]; then
+            echo "⚠ No previous successful build found."
+            echo "no_run=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "Last successful build timestamp:"
+          echo "  $LAST_RUN"
+
+          LAST_EPOCH=$(date -d "$LAST_RUN" +%s)
+          NOW_EPOCH=$(date +%s)
+
+          AGE_MIN=$(( (NOW_EPOCH - LAST_EPOCH) / 60 ))
+
+          echo "Current time (UTC): $(date -u)"
+          echo "Build age: $AGE_MIN minutes"
+
+          if [ "$AGE_MIN" -gt 45 ]; then
+            echo "❌ Build is stale (older than 45 minutes)"
+            echo "stale=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Build is recent"
+            echo "stale=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Trigger rebuild if needed
+        if: steps.check.outputs.stale == 'true' || steps.check.outputs.no_run == 'true'
+        run: |
+          echo ""
+          echo "=========================================="
+          echo " Triggering Zero-OS rebuild"
+          echo "=========================================="
+
+          curl -X POST \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/zero-os-scheduled-build.yml/dispatches \
+            -d '{"ref":"main"}'
+
+          echo "Rebuild request sent."
+
+      - name: No action required
+        if: steps.check.outputs.stale == 'false'
+        run: |
+          echo ""
+          echo "=========================================="
+          echo " No rebuild required"
+          echo " System healthy"
+          echo "=========================================="

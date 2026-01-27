@@ -7,7 +7,7 @@
 ####################
 
 name: zero-os-mesa
-description: zero-os (minimal) image for intel/amd (mesa) gpu's
+description: Zero-OS image for intel/amd (mesa) gpu's
 base-image: quay.io/fedora/fedora-bootc
 image-version: latest
 platforms:
@@ -17,11 +17,6 @@ platforms:
 #### MODULES ####
 #################
 modules:
-## Files Module ##
-  - type: files
-    files:
-      - source: system
-        destination: /
 
 ## Import Modules/Scripts ##
 # => Modules (Imported)

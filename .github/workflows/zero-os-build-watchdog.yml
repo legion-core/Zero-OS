@@ -2,7 +2,7 @@ name: Zero-OS Watchdog
 
 on:
   workflow_dispatch:
-
+  ### watchdog runs are managed by cron-job.org ( much more reliable ) ###
 permissions:
   actions: write
   contents: read

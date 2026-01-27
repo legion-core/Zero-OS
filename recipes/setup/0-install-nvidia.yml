@@ -6,6 +6,6 @@ modules:
      packages:
        - libva-nvidia-driver
        - xorg-x11-drv-nvidia-cuda
-       - vulkan
        - xorg-x11-drv-nvidia-cuda-libs
        - akmod-nvidia-open
+       - xorg-x11-drv-nvidia-power

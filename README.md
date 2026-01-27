@@ -1,6 +1,10 @@
 # Zero OS
 
-[![bluebuild build badge](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml/badge.svg)](https://github.com/legion-core/zero-os/actions/workflows/bluebuild-build-update.yml)
+[![Zero-OS Automatic Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-automatic-builder.yml)
+
+[![Zero-OS Scheduled Builder](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-scheduled-build.yml)
+
+[![Zero-OS Watchdog](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-build-watchdog.yml/badge.svg)](https://github.com/legion-core/Zero-OS/actions/workflows/zero-os-build-watchdog.yml)
 
 Zero OS is a custom Fedora Atomic image you can use as a starting point for your own OS or custom image (you are expected to extend/layer stuff on Zero OS, as it is headless by default).
 

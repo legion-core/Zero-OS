@@ -18,5 +18,4 @@ modules:
         - cups-filters-driverless
         - cups-browsed
         - ipp-usb
-        - system-config-printer
         - nss-mdns

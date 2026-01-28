@@ -35,4 +35,5 @@ jobs:
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
           verify_install: true
+          build_chunked_oci: true
           maximize_build_space: true

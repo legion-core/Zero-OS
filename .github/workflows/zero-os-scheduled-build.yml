@@ -20,10 +20,11 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - 0-core-mesa.yml
-          - 0-core-nvidia.yml
-          - 0-core-mini.yml
-
+          - 0-mesa.yml
+          - 0-nvidia.yml
+          - 0-mini.yml
+          - 0-nvidia-hybrid.yml
+          
     steps:
       - name: Announce scheduled build
         run: |

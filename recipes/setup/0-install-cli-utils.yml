@@ -19,15 +19,6 @@ modules:
          - fd-find
          - bat
          - fzf
-         - distrobox
-         - podman-compose
-         - git
-         - nodejs
-         - pipx
-         - python3-pip
-         - python3-dotenv+cli
-         - nodejs-npm
-         - nodejs-full-i18n
-#################################################################################################################
-### Installs additional shell and packages (most used ones) that improve terminal usability + basic dev tools ###
-#################################################################################################################
+#############################################################################################################
+### Installs additional shell and packages (most used ones) that improve terminal usability + basic tools ###
+#############################################################################################################

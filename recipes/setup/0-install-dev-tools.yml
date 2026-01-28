@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
+modules:
+  - type: dnf
+    install:
+       install-weak-deps: false
+       packages:
+         - distrobox
+         - podman-compose
+         - git
+         - nodejs
+         - pipx
+         - python3-pip
+         - python3-dotenv+cli
+         - nodejs-npm
+         - nodejs-full-i18n
+###########################################
+### Installs additional basic dev tools ###
+###########################################

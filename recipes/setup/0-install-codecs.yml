@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
   - type: dnf
     install:
@@ -17,3 +21,6 @@ modules:
          - libjxl
          - libwebp
          - exiv2
+######################################################
+### installs non-free codecs from RPM-fusion repos ###
+######################################################

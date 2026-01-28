@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
   - type: dnf
     install:
@@ -24,3 +28,6 @@ modules:
          - python3-dotenv+cli
          - nodejs-npm
          - nodejs-full-i18n
+#################################################################################################################
+### Installs additional shell and packages (most used ones) that improve terminal usability + basic dev tools ###
+#################################################################################################################

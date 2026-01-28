@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
  - type: dnf
    install:
@@ -27,3 +31,6 @@ modules:
       - NetworkManager-openvpn
       - unbound-anchor
       - usbmuxd
+############################################################################################################################################################ 
+### Installs Basic Packages , they improve upon base functionality provided by fedora-bootc & impove system detection/management (is subject to changes) ###
+############################################################################################################################################################

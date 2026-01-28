@@ -1,7 +1,10 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+##############
+### Module ###
+##############
 modules:
-
+#=> Setups & installs homebrew along with its services.
   - type: brew
     nofile-limits: true
     brew-analytics: false
@@ -11,3 +14,6 @@ modules:
     upgrade-interval: 8h
     update-wait-after-boot: 2h
     upgrade-wait-after-boot: 4h
+#########################################################################
+### Provides A additional package manager to install TUI/CLI packages ###
+#########################################################################

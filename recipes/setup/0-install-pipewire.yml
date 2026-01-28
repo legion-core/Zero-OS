@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
   - type: dnf
     install:
@@ -17,3 +21,6 @@ modules:
          - pipewire-utils
          - pipewire-config-raop
          - vlc-plugin-pipewire
+########################################################################
+### Installs complete pipewire stack (must have for wayland systems )###
+########################################################################

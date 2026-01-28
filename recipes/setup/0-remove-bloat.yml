@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
   - type: dnf
     remove:
@@ -10,4 +14,6 @@ modules:
         - micro
         - htop
         - nvtop
-
+#################################################################################
+### Removes Bloat Which was accidentally installed or is a part of base image ###
+#################################################################################

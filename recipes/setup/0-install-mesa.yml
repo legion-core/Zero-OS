@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
  - type: dnf
    install:
@@ -13,3 +17,6 @@ modules:
       - intel-vpl-gpu-rt
       - mesa-va-drivers-freeworld
       - mesa-vdpau-drivers-freeworld
+#########################################################################
+### Installs AMD/Intel GPU drivers ( rcom is not included by default) ###
+#########################################################################

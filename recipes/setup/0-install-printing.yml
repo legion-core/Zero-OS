@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
   - type: dnf
     install:
@@ -19,3 +23,6 @@ modules:
         - cups-browsed
         - ipp-usb
         - nss-mdns
+###########################################################################
+### Installs CUPS (along with extras) & Avahi (helps auto find printer) ###
+###########################################################################

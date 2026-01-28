@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   bluebuild:
-    name: Build Custom Image
+    name: Zero-OS Scheduled Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -24,7 +24,7 @@ jobs:
           - 0-nvidia.yml
           - 0-mini.yml
           - 0-nvidia-hybrid.yml
-          
+
     steps:
       - name: Announce scheduled build
         run: |

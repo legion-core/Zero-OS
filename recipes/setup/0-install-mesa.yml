@@ -10,13 +10,8 @@ modules:
      install-weak-deps: false
      packages:
       - mesa-libGLU
-      - mesa-vulkan-drivers
       - vulkan-tools
       - libva-utils
-      - intel-media-driver
-      - intel-vpl-gpu-rt
-      - mesa-va-drivers-freeworld
-      - mesa-vdpau-drivers-freeworld
-#########################################################################
-### Installs AMD/Intel GPU drivers ( rcom is not included by default) ###
-#########################################################################
+########################################################################################################
+### Installs mesa GPU drivers ( some libs are not listed here but they are included in final image ) ###
+########################################################################################################

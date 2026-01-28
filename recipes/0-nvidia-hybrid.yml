@@ -20,15 +20,18 @@ modules:
 
 ## Import Modules/Scripts ##
 # => Modules (Imported)
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-  - from-file: setup/
-
+  - from-file: setup/0-install-repos.yml
+  - from-file: setup/0-install-base.yml
+  - from-file: setup/0-install-brew.yml
+  - from-file: setup/0-install-mesa.yml
+  - from-file: setup/0-install-intel-amd-media.yml
+  - from-file: setup/0-install-nvidia.yml
+  - from-file: setup/0-install-codecs.yml
+  - from-file: setup/0-install-pipewire.yml
+  - from-file: setup/0-install-cli-utils.yml
+  - from-file: setup/0-install-dev-tools.yml
+  - from-file: setup/0-install-printing.yml
+  - from-file: setup/0-remove-bloat.yml
 #############################
 ### End of System Modules ###
 #############################

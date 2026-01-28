@@ -7,7 +7,7 @@
 ####################
 
 name: zero-os-mesa
-description: Zero-OS image for intel/amd (mesa) gpu's
+description: Zero-OS image for Intel GPUs
 base-image: quay.io/fedora/fedora-bootc
 image-version: latest
 platforms:
@@ -38,7 +38,7 @@ modules:
     properties:
       ID: fedora
       NAME: Zero-OS
-      PRETTY_NAME: Zero-OS by legion-core (intel/amd)
+      PRETTY_NAME: Zero-OS by legion-core (intel)
 
 ## initramfs module ##
   - type: initramfs

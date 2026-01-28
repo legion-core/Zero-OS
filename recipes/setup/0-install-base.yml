@@ -11,9 +11,6 @@ modules:
      packages:
       - kernel-tools-libs
       - kernel-modules-extra
-      - wget
-      - thermald
-      - upower
       - alsa-ucm
       - alsa-utils
       - alsa-sof-firmware

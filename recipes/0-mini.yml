@@ -26,6 +26,7 @@ modules:
   - from-file: setup/0-install-codecs.yml
   - from-file: setup/0-install-pipewire.yml
   - from-file: setup/0-remove-bloat.yml
+  
 #############################
 ### End of System Modules ###
 #############################

@@ -1,5 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+###############
+### Modules ###
+###############
 modules:
  - type: dnf
    install:
@@ -11,3 +15,6 @@ modules:
       - libva-utils
       - intel-media-driver
       - intel-vpl-gpu-rt
+###########################################################################
+### Added Proper AMD driver Stack to ensure proper working & performace ###
+###########################################################################

@@ -1,11 +1,15 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
-modules:
 
+###############
+### Modules ###
+###############
+modules:
+# => Add RPM-fusion ( tainted included ) to image.
   - type: bling
     install:
      - rpmfusion
-
+# => Add starship Copr , Vscode Repo , Vivaldi Repo , Brave Repo .
   - type: dnf
     repos:
       copr:
@@ -14,8 +18,10 @@ modules:
           - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
           - https://packages.microsoft.com/keys/microsoft.asc
           - http://repo.vivaldi.com/archive/linux_signing_key.pub
-          
       files:
          - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
          - repo-vscode.repo
          - repo-vivaldi.repo
+###################################################################################################################################################################
+### Adds VScode , Vivaldi , Brave , RPM-fusion , Starship Copr , RPM-fusion to image (needed for drivers , codecs , VAAPI or NVEC support , 3rd Party Software) ###
+###################################################################################################################################################################

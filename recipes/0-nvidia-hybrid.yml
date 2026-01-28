@@ -8,8 +8,10 @@
 
 name: zero-os-hybrid
 description: Zero-OS image for Nvidia (Turing+) GPUs and Intel/AMD (iGPU) i.e for hybrid graphics systems.
+
 base-image: quay.io/fedora/fedora-bootc
 image-version: latest
+
 platforms:
   - linux/amd64
 
@@ -32,10 +34,11 @@ modules:
   - from-file: setup/0-install-dev-tools.yml
   - from-file: setup/0-install-printing.yml
   - from-file: setup/0-remove-bloat.yml
-  
+
 #############################
 ### End of System Modules ###
 #############################
+
 ## OS-release Module ##
   - type: os-release
     properties:
@@ -45,8 +48,10 @@ modules:
 
 ## initramfs module ##
   - type: initramfs
+
 ## Signing Module ##
   - type: signing
+  
 ###################
 ### END of File ###
 ###################

@@ -8,8 +8,10 @@
 
 name: zero-os
 description: Zero-OS (No GPU drivers Preinstalled)
+
 base-image: quay.io/fedora/fedora-bootc
 image-version: latest
+
 platforms:
   - linux/amd64
 
@@ -26,10 +28,11 @@ modules:
   - from-file: setup/0-install-codecs.yml
   - from-file: setup/0-install-pipewire.yml
   - from-file: setup/0-remove-bloat.yml
-  
+
 #############################
 ### End of System Modules ###
 #############################
+
 ## OS-release Module ##
   - type: os-release
     properties:
@@ -39,8 +42,10 @@ modules:
 
 ## initramfs module ##
   - type: initramfs
+
 ## Signing Module ##
   - type: signing
+  
 ###################
 ### END of File ###
 ###################

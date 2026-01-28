@@ -195,7 +195,7 @@ For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolb
 
 ## ▸ Extra
 
-## 1. How are Zero-OS images build ? what is the workflow logic ?
+## How are Zero-OS images build ? what is the workflow logic ?
 
    A.  Zero-OS images are build by stacking rpm-fusion packages over base 'fedora-bootc' , by default 'fedora-bootc' image dosent contain any codecs , audio firmware , extra repos etc . it is a very minimal base with only necessasy packages included.
        this provides a excellent and gives us total freedom on what to include or what-not , it also prevents any dnf swaps , overrides ; this keeps build flow cleaner and faster.
@@ -210,3 +210,10 @@ For normal packages, users can install using: linuxbrew/homebrew, flatpak, toolb
    github treats scheduler+cron (native ones) as more of a suggestion and they barely work most of the time on the intended interval.
 
    to counter this Zero-OS uses 'cron-job.org' as it is a 100% free , reliable , on-time/on-point exectuion , open source and is much easier to use.
+
+## What is difference between different Zero-OS images ?
+   
+   A. Zero-OS : only included codecs , pipewire , firmwares ( dosent included dev-tools , gpu drivers , cli-tools) .
+      Zero-OS nvidia : for nvidia gpus (nvidia-open).
+      Zero-OS mesa : for intel/amd gpus (new).
+      Zero-OS hybrid : for intel/amd + nvidia hybrid gpu system.

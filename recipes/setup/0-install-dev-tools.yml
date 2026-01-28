@@ -12,12 +12,6 @@ modules:
          - distrobox
          - podman-compose
          - git
-         - nodejs
-         - pipx
-         - python3-pip
-         - python3-dotenv+cli
-         - nodejs-npm
-         - nodejs-full-i18n
 ###########################################
 ### Installs additional basic dev tools ###
 ###########################################

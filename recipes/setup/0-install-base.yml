@@ -12,7 +12,6 @@ modules:
       - kernel-tools-libs
       - kernel-modules-extra
       - wget
-      - power-profiles-daemon
       - thermald
       - upower
       - alsa-ucm

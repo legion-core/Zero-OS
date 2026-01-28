@@ -12,12 +12,7 @@ modules:
          - zsh
          - zsh-autosuggestions
          - zsh-syntax-highlighting
-         - starship
-         - fastfetch
          - vim
-         - zoxide
-         - fd-find
-         - bat
          - fzf
 #############################################################################################################
 ### Installs additional shell and packages (most used ones) that improve terminal usability + basic tools ###
